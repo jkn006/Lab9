@@ -66,7 +66,58 @@
     });
 
     let errorBtns = Array.from(document.querySelectorAll('#error-btns > button'));
-    // TODO - Make buttons functional
+    errorBtns[0].addEventListener('click', function(){
+      console.log('Console Log Demo');
+    });
+    errorBtns[1].addEventListener('click', function(){
+      console.error('Console Error Demo');
+    });
+    errorBtns[2].addEventListener('click', function(){
+      console.dir(errorBtns[2]);
+    });
+    errorBtns[3].addEventListener('click', function(){
+      console.dirxml(document.querySelector('body'));
+    });
+    errorBtns[4].addEventListener('click', function(){
+      console.group('Log Group');
+    });
+    errorBtns[5].addEventListener('click', function(){
+      console.groupEnd('Log Group');
+    });
+    errorBtns[6].addEventListener('click', function(){
+      console.table([
+        {
+          Department: 'CSE',
+          Identifier: '110',
+          Summary: 'Software Engineering',
+        },
+        {
+          Department: 'CSE',
+          Identifier: '101',
+          Summary: 'Algorithms',
+        },
+        {
+          Department: 'ECE',
+          Identifier: '101',
+          Summary: 'Linear System Fundamentals',
+        }
+      ]);
+    });
+    errorBtns[7].addEventListener('click', function(){
+      console.time('Timer');
+      console.log('Timer Started');
+    });
+    errorBtns[8].addEventListener('click', function(){
+      console.log('Timer Ended');
+      console.timeEnd('Timer');
+    });
+    errorBtns[9].addEventListener('click', function(){
+      const deep = () => { deeper(); };
+      const deeper = () => { deepest(); };
+      const deepest = () => { trace(); };
+      const trace = () => { console.trace(); };
+      deep();
+    });
   </script>
 </body>
 </html>
